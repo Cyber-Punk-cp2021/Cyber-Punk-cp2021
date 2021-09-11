@@ -26,8 +26,3 @@ Você pode clicar no link Visualizar para ver suas alterações.
  
  
  
-              _.-;;-._
-      '-..-'|   ||   |
-      '-..-'|_.-;;-._|
-      '-..-'|   ||   |
-jgs   '-..-'|_.-''-._|
